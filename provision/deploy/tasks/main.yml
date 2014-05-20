@@ -1,0 +1,2 @@
+- name: Setup Virtualenv
+  pip: virtualenv={{ virtualenv_path }} requirements={{ virtualenv_path }}/requirements.txt
