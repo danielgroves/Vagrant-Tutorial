@@ -1,2 +1,6 @@
 - name: Setup Virtualenv
   pip: virtualenv={{ virtualenv_path }} requirements={{ virtualenv_path }}/requirements.txt
+- name: Django syncdb
+  django_manage: command=syncdb app_path={{ virtualenv_path }}/vagranttest virtualenv={{ virtualenv_path }}
+- name: Django migrate
+  django_manage: command=migrate app_path={{ virtualenv_path }}/vagranttest virtualenv={{ virtualenv_path }}
